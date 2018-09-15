@@ -45,7 +45,7 @@ class createContactInformationTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('admin_information');
+        Schema::dropIfExists('contact_information');
 
     }
 }

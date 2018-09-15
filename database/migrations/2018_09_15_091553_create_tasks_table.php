@@ -16,7 +16,7 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('task_owner_id')->unsigned();
-            $table->integer('task_department')->unsigned();
+            $table->integer('task_department_id')->unsigned();
             $table->foreign('task_owner_id')
                 ->references('id')->on('admins');
             $table->foreign('task_department_id')

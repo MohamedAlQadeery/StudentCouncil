@@ -30,25 +30,25 @@
                         </thead>
                         <tbody>
 
-                        {{--@foreach($users as $user)--}}
-                            {{--<tr>--}}
-                                {{--<td>{{$counter++}}</td>--}}
-                                {{--<td>{{$user->name}}</td>--}}
-                                {{--<td>{{$user->email}}</td>--}}
-                                {{--<td>{{$user->created_at}}</td>--}}
+                        @foreach($users as $user)
+                            <tr>
+                                <td>{{$counter++}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->created_at}}</td>
 
-                                {{--<td style="text-align: center">--}}
-                                    {{--<a href="{{route('user.edit')}}" class="btn btn-primary">--}}
-                                        {{--<i class="fa fa-edit"></i>--}}
-                                    {{--</a>--}}
-                                    {{--<a class="btn btn-danger" href="">--}}
-                                        {{--<i class="fa fa-trash"></i>--}}
-                                    {{--</a>--}}
+                                <td style="text-align: center">
+                                    <a href="{{route('user.edit')}}" class="btn btn-primary">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a class="btn btn-danger" href="">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
 
-                                {{--</td>--}}
+                                </td>
 
-                            {{--</tr>--}}
-                        {{--@endforeach--}}
+                            </tr>
+                        @endforeach
 
                         </tbody>
                     </table>

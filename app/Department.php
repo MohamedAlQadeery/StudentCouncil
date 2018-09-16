@@ -9,6 +9,7 @@ class Department extends Model
     //
 
     protected $fillable = ['name', 'manager_id'];
+    protected $with=['councilMember'];
     protected $table = "departments";
 
     /**
@@ -17,7 +18,7 @@ class Department extends Model
      */
     public function councilMember()
     {
-        return $this->belongsTo('App\CouncilMember');
+        return $this->belongsTo('App\CouncilMember','manager_id','id');
     }
 
     /**

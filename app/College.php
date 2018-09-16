@@ -15,7 +15,7 @@ class College extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function books(){
-        return $this->hasMany('App\Book');
+        return $this->hasMany('App\Book','college_id','id');
     }
 
 

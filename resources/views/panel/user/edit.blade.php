@@ -20,6 +20,7 @@
                     <label for="email">@lang('lang.email')</label>
                     <input type="text" class="form-control" name="email">
                 </div>
+
                 <div class="form-group">
                     <label for="password">@lang('lang.password')</label>
                     <input type="text" class="form-control" name="password">

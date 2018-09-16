@@ -22,4 +22,9 @@ Route::group(['prefix'=>'user'],function (){
     Route::get('edit',['as'=>'user.edit','uses'=>'UserController@edit']);
 
 });
+
+Route::group(['prefix'=>'department'],function(){
+    Route::get('/',['as'=>'department.index','uses'=>'DepartmentController@index']);
+    Route::get('create',['as'=>'department.create','uses'=>'DepartmentController@create']);
+});
 Route::get('lang/{lang?}', ['as' => 'language.change', 'uses' => 'LanguageController@change']);

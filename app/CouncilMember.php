@@ -16,7 +16,7 @@ class CouncilMember extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function department(){
-        return $this->hasOne('App\Department');
+        return $this->hasOne('App\Department','manager_id','id');
     }
 
 

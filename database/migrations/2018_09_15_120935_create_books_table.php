@@ -12,12 +12,12 @@ class CreateBooksTable extends Migration
      * @return void
      */
     /**
-     * type 1: جامعة متطلب
-     * 2:تخصص
+     * type 0: جامعة متطلب
+     * 1:تخصص
      *
      *
-     * is_book : 1:كتاب
-     * 2:نموذج
+     * is_book : 0:كتاب
+     * 1:نموذج
      */
 
     public function up()

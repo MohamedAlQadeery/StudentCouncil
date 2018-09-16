@@ -15,8 +15,11 @@ class DepartmentActivity extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function department(){
-        return $this->belongsTo('App\Department');
+        return $this->belongsTo('App\Department','department_id','id');
     }
 
 
+    public function southernCommittee(){
+        return $this->belongsTo('App\SouthernCommittee','southern_committee_id','id');
+    }
 }

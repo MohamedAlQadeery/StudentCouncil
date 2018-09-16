@@ -37,7 +37,12 @@
           id="style_color"/>
     <link href="{{asset('assets/layouts/layout4/css/custom-rtl.min.css')}}" rel="stylesheet" type="text/css"/>
 
+    {{--data table plugin--}}
+    <link href="{{asset('assets/global/plugins/datatables/datatables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css')}}" rel="stylesheet" type="text/css" />
+
 @else
+
 
     <link href="{{asset('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet"
           type="text/css"/>
@@ -66,6 +71,9 @@
     <link href="{{asset('assets/layouts/layout4/css/custom.min.css')}}" rel="stylesheet" type="text/css"/>
 
 
+{{-- datatable plugin--}}
+    <link href="{{asset('assets/global/plugins/datatables/datatables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
 @endif
 
 <!-- END THEME LAYOUT STYLES -->

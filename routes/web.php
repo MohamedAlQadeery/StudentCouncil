@@ -16,4 +16,10 @@ Route::get('/', function () {
 });
 
 
+
+Route::group(['prefix'=>'user'],function (){
+    Route::get('/',['as'=>'user.index','uses'=>'UserController@index']);
+    Route::get('edit',['as'=>'user.edit','uses'=>'UserController@edit']);
+
+});
 Route::get('lang/{lang?}', ['as' => 'language.change', 'uses' => 'LanguageController@change']);

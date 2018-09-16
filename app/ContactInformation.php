@@ -16,7 +16,7 @@ class ContactInformation extends Model
      * return admin of the contact info
      */
     public function AdminContactInfo(){
-        $this->belongsTo('App\Admin','admin_id');
+        $this->belongsTo('App\Admin','admin_id','id');
     }
 
     /**
@@ -24,7 +24,7 @@ class ContactInformation extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function departmentContactInfo(){
-        return $this->belongsTo('App\Department','department_id');
+        return $this->belongsTo('App\Department','department_id','id');
     }
 
 }

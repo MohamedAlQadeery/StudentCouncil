@@ -15,56 +15,21 @@
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN PAGE ACTIONS -->
         <!-- DOC: Remove "hide" class to enable the page header actions -->
-        <div class="page-actions">
-            <div class="btn-group">
-                <button type="button" class="btn red-haze btn-sm dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                    <span class="hidden-sm hidden-xs">Actions&nbsp;</span>
-                    <i class="fa fa-angle-down"></i>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-docs"></i> New Post </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-tag"></i> New Comment </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-share"></i> Share </a>
-                    </li>
-                    <li class="divider"> </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-flag"></i> Comments
-                            <span class="badge badge-success">4</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-users"></i> Feedbacks
-                            <span class="badge badge-danger">2</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <!-- END PAGE ACTIONS -->
         <!-- BEGIN PAGE TOP -->
         <div class="page-top">
             <!-- BEGIN HEADER SEARCH BOX -->
             <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-            <form class="search-form" action="page_general_search_2.html" method="GET">
-                <div class="input-group">
-                    <input type="text" class="form-control input-sm" placeholder="Search..." name="query">
-                    <span class="input-group-btn">
-                                <a href="javascript:;" class="btn submit">
-                                    <i class="icon-magnifier"></i>
-                                </a>
-                            </span>
-                </div>
-            </form>
+            {{--<form class="search-form" action="page_general_search_2.html" method="GET">--}}
+                {{--<div class="input-group">--}}
+                    {{--<input type="text" class="form-control input-sm" placeholder="Search..." name="query">--}}
+                    {{--<span class="input-group-btn">--}}
+                                {{--<a href="javascript:;" class="btn submit">--}}
+                                    {{--<i class="icon-magnifier"></i>--}}
+                                {{--</a>--}}
+                            {{--</span>--}}
+                {{--</div>--}}
+            {{--</form>--}}
             <!-- END HEADER SEARCH BOX -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <div class="top-menu">
@@ -74,6 +39,29 @@
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <!-- DOC: Apply "dropdown-hoverable" class after "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
                     <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                    <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="icon-bell"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="external">
+                                <h3>
+                                    <span class="bold">Languages</span></h3>
+                            </li>
+                            <li>
+                                <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                    <li>
+                                        <a href="{{route('language.change',['lang'=>'ar'])}}">Arabic</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('language.change',['lang'=>'en'])}}">English</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END NOTIFICATION DROPDOWN -->
+                    <li class="separator hide"> </li>
                     <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <i class="icon-bell"></i>
@@ -174,6 +162,7 @@
                     </li>
                     <!-- END NOTIFICATION DROPDOWN -->
                     <li class="separator hide"> </li>
+
                     <!-- BEGIN INBOX DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">

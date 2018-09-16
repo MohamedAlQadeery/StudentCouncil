@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//
 Route::get('/', function () {
-    return view('welcome');
+    return view('test');
 });
+
+
+Route::get('lang/{lang?}', ['as' => 'language.change', 'uses' => 'LanguageController@change']);

@@ -16,6 +16,7 @@ class CreateCouncilMembersTable extends Migration
             Schema::create('council_members', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('name');
+                $table->string('image');
 
             $table->timestamps();
         });

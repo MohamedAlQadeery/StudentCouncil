@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CouncilMember extends Model
 {
     //
-    protected $fillable=['name'];
+    protected $fillable=['name','image'];
     protected $table='council_members';
 
 

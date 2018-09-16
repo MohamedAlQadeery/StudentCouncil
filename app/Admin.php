@@ -25,7 +25,7 @@ class Admin extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function contactInfo(){
-        return $this->hasOne('App\ContactInformation','admin_id');
+        return $this->hasOne('App\ContactInformation','admin_id','id');
     }
 
     /**

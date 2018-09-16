@@ -11,9 +11,9 @@
 @if(app()->getLocale()=='ar')
 
 
-    <link href="{{asset('assets/global/plugins/font-awesome/css/font-awesome-rtl.min.css')}}" rel="stylesheet"
+    <link href="{{asset('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet"
           type="text/css"/>
-    <link href="{{asset('assets/global/plugins/simple-line-icons/simple-line-icons-rtl.min.css')}}" rel="stylesheet"
+    <link href="{{asset('assets/global/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet"
           type="text/css"/>
     <link href="{{asset('assets/global/plugins/bootstrap/css/bootstrap-rtl.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min-rtl.css')}}" rel="stylesheet"

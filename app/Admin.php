@@ -44,4 +44,11 @@ class Admin extends Model
         return $this->hasMany('App\Report');
     }
 
+
+    public function getImage(){
+        if(!$this->image)
+            return asset('no_image.png');
+        return asset($this->image);
+
+    }
 }

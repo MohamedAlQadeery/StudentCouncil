@@ -49,11 +49,11 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="page-content">
 
             @if(session('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success col-md-6" style="margin-left:13px">
                     {{session('success')}}
                 </div>
             @elseif(session('error'))
-                <div class="alert alert-danger">
+                <div class="alert alert-danger col-md-6" style="margin-left:13px">
                     {{session('error')}}
                 </div>
             @endif

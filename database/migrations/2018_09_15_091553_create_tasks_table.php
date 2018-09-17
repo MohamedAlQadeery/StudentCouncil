@@ -15,12 +15,15 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('task_owner_id')->unsigned();
-            $table->integer('task_department_id')->unsigned();
-            $table->foreign('task_owner_id')
+            $table->integer('task_admin_id')->unsigned()->nullable();
+            $table->integer('task_council_member_id')->unsigned()->nullable();
+
+            $table->foreign('task_admin_id')
                 ->references('id')->on('admins');
-            $table->foreign('task_department_id')
-                ->references('id')->on('departments');
+
+            $table->foreign('task_council_member_id')
+                ->references('id')->on('council_members');
+
 
             $table->string('task_description');
             $table->timestamps();

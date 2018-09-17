@@ -15,10 +15,10 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')
                 ->references('id')->on('users');
-            $table->integer('admin_id')->unsigned();
+            $table->integer('admin_id')->unsigned()->nullable();
             $table->foreign('admin_id')
                 ->references('id')->on('admins');
             $table->string('image');

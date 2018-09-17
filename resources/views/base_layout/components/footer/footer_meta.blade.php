@@ -62,6 +62,10 @@
 
 <script src="{{asset('assets/pages/scripts/table-datatables-managed.min.js')}}" type="text/javascript"></script>
 
+{{--image plugin--}}
+<script src="{{asset('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}" type="text/javascript"></script>
+
+{{----}}
 <!-- END THEME LAYOUT SCRIPTS -->
 <script>
     $(document).ready(function()

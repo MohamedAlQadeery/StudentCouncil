@@ -1,6 +1,8 @@
 @extends('base_layout._layout')
 
+
 @section('body')
+
 
     @php
         $counter=1;
@@ -21,26 +23,34 @@
                         <thead>
                         <tr class="uppercase">
                             <th> #</th>
-                            <th>@lang('lang.first name')</th>
-                            <th> @lang('lang.last name')</th>
-                            <th> @lang('lang.email')</th>
-                            <th>@lang('lang.created_at')</th>
+                            <th>@lang('lang.department name')</th>
+                            <th> @lang('lang.department type')</th>
+                            <th> @lang('lang.department leader')</th>
+                            <th> @lang('lang.department activities')</th>
+                            <th> @lang('lang.department tasks')</th>
+                            <th>@lang('lang.contact information')</th>
                             <th style="text-align: center">@lang('lang.options')</th>
                         </tr>
                         </thead>
                         <tbody>
-
-                        @foreach($users as $user)
+                        @foreach($departments as $department)
                             <tr>
                                 <td>{{$counter++}}</td>
-                                <td>{{$user->first_name}}</td>
-                                <td>{{$user->last_name}}</td>
-
-                                <td>{{$user->email}}</td>
-                                <td>{{$user->created_at}}</td>
+                                <td>{{$department->name}}</td>
+                                <td>
+                                    @if($department->type==0)
+                                        @lang('lang.committee')
+                                    @else
+                                        @lang('lang.club')
+                                    @endif
+                                </td>
+                                <td>{{$department->councilMember->name}}</td>
+                                <td><a href="" class="btn btn-default">@lang('lang.show')</a></td>
+                                <td><a href="" class="btn btn-default">@lang('lang.show')</a></td>
+                                <td></td>
 
                                 <td style="text-align: center">
-                                    <a href="{{route('user.edit')}}" class="btn btn-primary">
+                                    <a href="" class="btn btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     <a class="btn btn-danger" href="">
@@ -48,7 +58,6 @@
                                     </a>
 
                                 </td>
-
                             </tr>
                         @endforeach
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DepartmentActivity extends Model
 {
     //
-    protected $table='departments_activities';
+    protected $table='departments_activites';
     protected $fillable = ['department_id','name','image','body'];
 
     /**

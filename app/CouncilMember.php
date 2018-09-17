@@ -19,6 +19,14 @@ class CouncilMember extends Model
         return $this->hasOne('App\Department','manager_id','id');
     }
 
+    /**
+     * return the tasks of the council member
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks(){
+        return $this->hasMany('App\Task','task_council_member_id','id');
+    }
+
 
 
 }

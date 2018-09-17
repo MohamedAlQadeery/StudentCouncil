@@ -28,7 +28,7 @@ class CreateBooksTable extends Migration
             $table->string('image');
             $table->string('url');
             $table->enum('type',[0,1]);
-            $table->integer('college_id')->unsigned();
+            $table->integer('college_id')->unsigned()->nullable();
             $table->foreign('college_id')
                 ->references('id')->on('colleges');
             $table->enum('is_book',[0,1]);

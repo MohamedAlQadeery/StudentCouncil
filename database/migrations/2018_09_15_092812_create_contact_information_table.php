@@ -17,18 +17,17 @@ class createContactInformationTable extends Migration
 
         Schema::create('contact_information', function (Blueprint $table) {
             $table->increments('id');
-           $table->integer('admin_id')->unsigned();
-           $table->integer('department_id')->unsigned();
+           $table->integer('admin_id')->unsigned()->nullable();
+           $table->integer('department_id')->unsigned()->nullable();
 
             $table->foreign('admin_id')
                 ->references('id')->on('admins');
             $table->foreign('department_id')
                 ->references('id')->on('departments');
-            $table->string('task_description');
-            $table->string('facebook');
+            $table->string('facebook')->nullable();
             $table->string('email');
-            $table->string('instagram');
-            $table->string('twitter');
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
 
             $table->string('phone');
             //

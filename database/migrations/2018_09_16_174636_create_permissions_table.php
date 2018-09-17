@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCouncilMembersTable extends Migration
+class CreatePermissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateCouncilMembersTable extends Migration
      */
     public function up()
     {
-            Schema::create('council_members', function (Blueprint $table) {
-                $table->increments('id');
-                $table->string('name');
-                $table->text('description');
-                $table->string('image');
-
+        Schema::create('permissions', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('permission');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateCouncilMembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('council_members');
+        Schema::dropIfExists('permissions');
     }
 }

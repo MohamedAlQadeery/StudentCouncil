@@ -15,8 +15,8 @@ class CreateDepartmentsActivitesTable extends Migration
     {
         Schema::create('departments_activites', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('department_id')->unsigned();
-            $table->integer('southern_committee_id')->unsigned();
+            $table->integer('department_id')->unsigned()->nullable();
+            $table->integer('southern_committee_id')->unsigned()->nullable();
             $table->foreign('department_id')
                 ->references('id')->on('departments');
             $table->foreign('southern_committee_id')

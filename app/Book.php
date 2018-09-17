@@ -19,4 +19,17 @@ class Book extends Model
         return $this->belongsTo('App\College');
     }
 
+    /**
+     *
+     *
+     */
+    public function getImage()
+    {
+        if (!$this->image)
+            return asset('emptyimage.jpg');
+        return asset($this->image);
+    }
+
+
+
 }

@@ -9,7 +9,7 @@ class Department extends Model
     //
 
     protected $fillable = ['name', 'manager_id'];
-    protected $with=['councilMember','deptActivities','contactInfo'];
+    protected $with=['councilMember'];
     protected $table = "departments";
 
     /**
@@ -26,17 +26,24 @@ class Department extends Model
      */
     public function deptActivities()
     {
-        return $this->hasMany('App\DepartmentActivity','department_id','id');
+        return $this->hasMany('App\DepartmentActivity','dep');
     }
 
-
+    /**
+     * return the tasks of the department
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks()
+    {
+        return $this->hasMany('App\Task','department_id');
+    }
 
     /**
      * return the contact info of the department
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function contactInfo(){
-        return $this->hasOne('App\ContactInformation','department_id','id');
+        return $this->hasOne('App\ContactInformation','department_id');
     }
 
 

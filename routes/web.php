@@ -66,10 +66,10 @@ Route::group(['prefix' => 'admins',], function () {
  *
  */
 Route::group(['prefix' => 'south',], function () {
-    Route::get('index', ['uses' => 'SouthernCommittee@index', 'as' => 'south.index']);
-    Route::get('create', ['uses' => 'SouthernCommittee@create', 'as' => 'south.create']);
-    Route::post('create/{id?}', ['uses' => 'SouthernCommittee@store', 'as' => 'south.store']);
-    Route::get('destroy/{id?}', ['uses' => 'SouthernCommittee@destroy', 'as' => 'south.destroy']);
+    Route::get('index', ['uses' => 'SouthController@index', 'as' => 'south.index']);
+    Route::get('create', ['uses' => 'SouthController@create', 'as' => 'south.create']);
+    Route::post('create/{id?}', ['uses' => 'SouthController@store', 'as' => 'south.store']);
+    Route::get('destroy/{id?}', ['uses' => 'SouthController@destroy', 'as' => 'south.destroy']);
 
 });
 
@@ -79,10 +79,10 @@ Route::group(['prefix' => 'south',], function () {
  *
  */
 Route::group(['prefix' => 'upload'], function () {
-    Route::get('create', 'uploadController@create');
-    Route::post('create', ['as' => 'slider.upload', 'uses' => 'uploadController@store']);
-    Route::get('all', ['as' => 'image.index', 'uses' => 'uploadController@index']);
-    Route::get('destroy/{id?}', ['as' => 'image.destroy', 'uses' => 'uploadController@destroy']);
+    Route::get('create', 'sliderController@create');
+    Route::post('create', ['as' => 'slider.upload', 'uses' => 'SliderController@store']);
+    Route::get('all', ['as' => 'image.index', 'uses' => 'SliderController@index']);
+    Route::get('destroy/{id?}', ['as' => 'image.destroy', 'uses' => 'SliderController@destroy']);
 
 });
 

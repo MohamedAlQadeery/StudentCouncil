@@ -20,8 +20,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments=Department::paginate(10);
-        return view('panel.department.index')->with('departments',$departments);
+        $departments = Department::paginate(10);
+        return view('panel.department.index')->with('departments', $departments);
     }
 
     /**
@@ -37,10 +37,8 @@ class DepartmentController extends Controller
             ->get();
 
 
-                return view('panel.department.createDepartment')->with('councilMembers', $councilMembers);
+        return view('panel.department.createDepartment')->with('councilMembers', $councilMembers);
     }
-
-
 
 
     /**
@@ -54,22 +52,22 @@ class DepartmentController extends Controller
 
         $request->validate($this->rules());
 
-        $department =  Department::create([
-            'name'=>$request->input('department_name'),
-            'type'=>$request->input('type'),
-            'manager_id'=>$request->input('department_leader')
+        $department = Department::create([
+            'name' => $request->input('department_name'),
+            'type' => $request->input('type'),
+            'manager_id' => $request->input('department_leader')
         ]);
 
         $department->contactInfo()->create([
-            'facebook'=>$request->input('department_facebook'),
-            'phone'=>$request->input('department_phone'),
-            'instagram'=>$request->input('department_instagram'),
-            'twitter'=>$request->input('department_twitter'),
-            'email'=>$request->input('department_email'),
+            'facebook' => $request->input('department_facebook'),
+            'phone' => $request->input('department_phone'),
+            'instagram' => $request->input('department_instagram'),
+            'twitter' => $request->input('department_twitter'),
+            'email' => $request->input('department_email'),
 
         ]);
 
-        return redirect()->back()->with('success','done the department has been created');
+        return redirect()->back()->with('success', 'done the department has been created');
 
     }
 
@@ -79,37 +77,67 @@ class DepartmentController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
 
-    public function edit($id){
-        try{
-            $department= Department::findOrFail($id);
-            return view('panel.department.edit')->with('department',$department);
-        }catch (ModelNotFoundException $modelNotFoundException){
-        return redirect()->back()->with('error','Department not found');
+    public function edit($id)
+    {
+        try {
+            $department = Department::findOrFail($id);
+
+            $councilMembers = DB::table("council_members")->select('*')
+                ->whereNotIn('id', function ($query) {
+                    $query->select('manager_id')->from('departments');
+                })
+                ->get();
+            return view('panel.department.edit')->with([
+                'department' => $department,
+                'councilMembers'=>$councilMembers
+            ]);
+        } catch (ModelNotFoundException $modelNotFoundException) {
+            return redirect()->back()->with('error', 'Department not found');
         }
     }
 
 
+    public function update(Request $request, $id)
+    {
+        try{
+            $department=Department::findOrFail($id);
+            $request->validate($this->rules());
 
-    public function update(Request $request,$id){
+            $department = Department::where('id',$id)->update([
+                'name' => $request->input('department_name'),
+                'type' => $request->input('type'),
+                'manager_id' => $request->input('department_leader')
+            ]);
 
+            $department->contactInfo()->update([
+                'facebook' => $request->input('department_facebook'),
+                'phone' => $request->input('department_phone'),
+                'instagram' => $request->input('department_instagram'),
+                'twitter' => $request->input('department_twitter'),
+                'email' => $request->input('department_email'),
+
+            ]);
+
+        }catch (ModelNotFoundException $modelNotFoundException){
+            return redirect()->back()->with('error', 'Department not found');
+
+        }
     }
 
 
-
-
-
-    private function rules($id=null){
-        $rules=[
-            'type'=>'required',
-            'department_leader'=>'required',
-            'department_phone'=>'required|numeric',
-            'department_email'=>'required|unique:contact_contact_information,email'
+    private function rules($id = null)
+    {
+        $rules = [
+            'type' => 'required',
+            'department_leader' => 'required',
+            'department_phone' => 'required|numeric',
+            'department_email' => 'required|unique:contact_contact_information,email'
         ];
-        if($id){
-           $rules['department_name'] ='required|unique:departments,name'.$id;
+        if ($id) {
+            $rules['department_name'] = 'required|unique:departments,name' . $id;
 
-        }else
-            $rules['department_name'] ='required|unique:departments,name';
+        } else
+            $rules['department_name'] = 'required|unique:departments,name';
 
         return $rules;
     }

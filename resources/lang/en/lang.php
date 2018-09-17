@@ -23,6 +23,7 @@ return [
     'departments'=>'Departments',
     'show departments'=>'Show Department',
     'create department'=>'Create Department',
+    'edit department'=>'Edit Department',
     'type'=>'Type',
     'department type'=>'Department Type ',
     'committee'=>'Committee',
@@ -34,6 +35,27 @@ return [
     'twitter'=>'Twitter',
     'instagram'=>'Instagram',
     'phone'=>'Phone',
+
+
+
+
+    'admin'=>'Admin',
+    'create admin'=>'Create Admin',
+    'admins'=>'Admins',
+
+    'add activity'=>'Add Activity',
+    'add task'=>'Add Task',
+    'south committee'=>'South Committee',
+    'south committee details'=>'South Committee Detalis',
+    'add description'=>'Add Description',
+    'slider'=>'Slider',
+    'upload image'=>'Upload Image',
+    'college'=>'College',
+    'colleges'=>'Colleges',
+    'add college'=>'Add College',
+
+
+
 
 
     /**

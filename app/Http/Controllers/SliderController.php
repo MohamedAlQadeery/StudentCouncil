@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Slider;
 use Illuminate\Http\Request;
 
-class uploadController extends Controller
+class SliderController extends Controller
 {
 
 

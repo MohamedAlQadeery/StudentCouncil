@@ -23,6 +23,7 @@ return [
     'departments' => 'الاقسام',
     'show departments' => 'اظهر الاقسام',
     'create department' => 'انشاء قسم',
+    'edit department'=>'تعديل القسم',
     'type' => 'النوع',
     'department type' => 'نوع القسم',
     'committee' => 'لجنة',
@@ -34,6 +35,25 @@ return [
     'twitter' => 'تويتر',
     'instagram' => 'الانستقرام',
     'phone' => 'الهاتف',
+
+
+
+    'admin'=>'مسؤول',
+    'create admin'=>'انشاء مسؤول',
+    'admins'=>'المسؤولين',
+
+    'add activity'=>'اضافة نشاط',
+    'add task'=>'اضافة مهمة',
+    'south committee'=>'لجنة الجنوب',
+    'south committee details'=>'وصف اللجنة',
+
+    'add description'=>'اضافة وصف',
+    'slider'=>'عارض الصور',
+    'upload image'=>'رفع صورة',
+    'college'=>'كلية',
+    'colleges'=>'الكليات',
+    'add college'=>' اضافة كلية',
+
 
 
     /**

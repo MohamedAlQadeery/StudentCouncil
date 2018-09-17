@@ -7,11 +7,11 @@
             <div class="portlet light bordered">
 
                 <div class="caption font-red-sunglo">
-                    <h3> <span class="caption-subject bold uppercase"> @lang('lang.create department')</span></h3>
+                    <h3> <span class="caption-subject bold uppercase"> @lang('lang.edit department')</span></h3>
                 </div><br>
                 <form action="{{route('department.update',['id'=>$department->id])}}" method="POST">
                     @csrf
-                    @put
+                    {{method_field('PUT')}}
 
                     <div class="form-group">
                         <label for="name">@lang('lang.department name')</label>

@@ -79,7 +79,7 @@
                 </li>
 
                 <li class="nav-item start ">
-                    <a href="{{route('department.create')}}" class="nav-link ">
+                    <a href="{{route('department.addActivity')}}" class="nav-link ">
                         <i class="icon-bulb"></i>
                         <span class="title">@lang('lang.add activity') </span>
                     </a>

@@ -101,15 +101,17 @@ class DepartmentController extends Controller
     {
         try{
             $department=Department::findOrFail($id);
-            $request->validate($this->rules());
+            $request->validate($this->rules($id));
 
-            $department = Department::where('id',$id)->update([
+           $d= $department->update([
                 'name' => $request->input('department_name'),
                 'type' => $request->input('type'),
                 'manager_id' => $request->input('department_leader')
             ]);
 
-            $department->contactInfo()->update([
+
+
+        $department->contactInfo()->update([
                 'facebook' => $request->input('department_facebook'),
                 'phone' => $request->input('department_phone'),
                 'instagram' => $request->input('department_instagram'),
@@ -118,6 +120,7 @@ class DepartmentController extends Controller
 
             ]);
 
+        return redirect()->back()->with('success','done the department has been updated successfully');
         }catch (ModelNotFoundException $modelNotFoundException){
             return redirect()->back()->with('error', 'Department not found');
 
@@ -125,16 +128,22 @@ class DepartmentController extends Controller
     }
 
 
+
+    public function addActivity(){
+
+        return view('panel.department.addActivity');
+    }
+
     private function rules($id = null)
     {
         $rules = [
             'type' => 'required',
             'department_leader' => 'required',
             'department_phone' => 'required|numeric',
-            'department_email' => 'required|unique:contact_contact_information,email'
+            'department_email' => 'required|unique:contact_information,email|email'
         ];
         if ($id) {
-            $rules['department_name'] = 'required|unique:departments,name' . $id;
+            $rules['department_name'] = 'required|unique:departments,name,'.$id;
 
         } else
             $rules['department_name'] = 'required|unique:departments,name';

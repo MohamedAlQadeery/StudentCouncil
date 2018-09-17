@@ -15,7 +15,7 @@
 
                     <div class="form-group">
                         <label for="name">@lang('lang.department name')</label>
-                        <input type="text" class="form-control" name="department_name">
+                        <input type="text" class="form-control" name="department_name" value="{{$department->name}}">
                         <span class="text-danger">{{$errors->first('department_name')}}</span>
 
                     </div>
@@ -37,6 +37,7 @@
                     <div class="form-group">
                         <label for="council_names">@lang('lang.department leader')</label>
                         <select name="department_leader" class="form-control">
+                            <option value="{{$department->councilMember->id}}">{{$department->councilMember->name}}</option>
                             @foreach($councilMembers as $councilMember)
                                 <option value="{{$councilMember->id}}">{{$councilMember->name}}</option>
                             @endforeach

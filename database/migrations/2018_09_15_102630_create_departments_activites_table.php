@@ -13,7 +13,7 @@ class CreateDepartmentsActivitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments_activites', function (Blueprint $table) {
+        Schema::create('departments_activities', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('department_id')->unsigned()->nullable();
             $table->integer('southern_committee_id')->unsigned()->nullable();
@@ -35,6 +35,6 @@ class CreateDepartmentsActivitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments_activites');
+        Schema::dropIfExists('departments_activities');
     }
 }

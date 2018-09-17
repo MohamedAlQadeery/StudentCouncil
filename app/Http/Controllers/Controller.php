@@ -16,7 +16,7 @@ class Controller extends BaseController
     {
 
         $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $direction = public_path($dir . '/');
+        $direction = public_path('images/'.$dir . '/');
         $image->move($direction, $imageName);
         return $dir . '/' . $imageName;
     }

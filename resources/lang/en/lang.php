@@ -9,6 +9,7 @@ return [
     'cancel' => 'Cancel',
     'image' => 'Image',
     'name' => 'Name',
+    'username'=>'Username',
     'user' => 'User',
     'users' => 'Users',
     'show users' => 'show users',
@@ -40,6 +41,8 @@ return [
 
 
     'admin'=>'Admin',
+    'super admin'=>'Super Admin',
+    'sub admin'=>'Sub Admin',
     'create admin'=>'Create Admin',
     'admins'=>'Admins',
 
@@ -47,6 +50,7 @@ return [
     'add task'=>'Add Task',
     'south committee'=>'South Committee',
     'south committee details'=>'South Committee Detalis',
+    'description'=>'Description',
     'add description'=>'Add Description',
     'slider'=>'Slider',
     'upload image'=>'Upload Image',

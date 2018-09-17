@@ -12,7 +12,7 @@
             <div class="portlet-title">
                 <div class="caption">
                     <i class="icon-settings font-red"></i>
-                    <span class="caption-subject font-red sbold uppercase">@lang('lang.Create Admin')</span>
+                    <span class="caption-subject font-red sbold uppercase">@lang('lang.create admin')</span>
                 </div>
 
 
@@ -33,10 +33,10 @@
                                 </div>
                                 <div>
                                                             <span class="btn red btn-outline btn-file">
-                                                                <span class="fileinput-new"> Select image </span>
-                                                                <span class="fileinput-exists"> Change </span>
+                                                                <span class="fileinput-new">@lang('lang.select image') </span>
+                                                                <span class="fileinput-exists">@lang('lang.change') </span>
                                                                 <input type="file" name="admin_image"> </span>
-                                    <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                    <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">@lang('lang.remove') </a>
                                 </div>
                                 <span class="text-danger">{{$errors->first('admin_image')}}</span>
 
@@ -45,7 +45,7 @@
 
 
                         <div class="form-group">
-                            <label class="control-label col-md-3">@lang('lang.Name')
+                            <label class="control-label col-md-3">@lang('lang.name')
                             </label>
                             <div class="col-md-4">
                                 <input type="text" name="name" data-required="1" class="form-control" value="{{old('name')}}"/>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">@lang('lang.Email')
+                            <label class="control-label col-md-3">@lang('lang.email')
                             </label>
                             <div class="col-md-4">
                                 <input name="email" type="text" class="form-control" value="{{old('email')}}"/>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">@lang('lang.Username')
+                            <label class="control-label col-md-3">@lang('lang.username')
                             </label>
                             <div class="col-md-4">
                                 <input name="username" type="text" class="form-control" value="{{old('username')}}"/>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">@lang('lang.Password')
+                            <label class="control-label col-md-3">@lang('lang.password')
                             </label>
                             <div class="col-md-4">
                                 <input name="password" type="password" class="form-control" value="{{old('password')}}"/>
@@ -79,7 +79,7 @@
                         </div>
 
                             <div class="form-group">
-                            <label class="control-label col-md-3">@lang('lang.Contact')
+                            <label class="control-label col-md-3">@lang('lang.contact')
                             </label>
                             <div class="col-md-4">
                                 <input name="contact_information" type="text" class="form-control" value="{{old('contact_information')}}"/>
@@ -88,15 +88,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3">@lang('lang.Type')
+                            <label class="control-label col-md-3">@lang('lang.type')
 
                             </label>
                             <div class="col-md-4">
                                 <select class="form-control" name="type">
-                                    <option value="">Select the type </option>
-                                    <option value="1" {{old('type') == '1' ?'selected' :''}}>@lang('lang.Super Admin')</option>
-                                    <option value="2" {{old('type') == '2' ?'selected' :''}}>@lang('lang.Sub Admin')</option>
-                                    <option value="3" {{old('type') == '3' ?'selected' :''}}>@lang('lang.Admin')</option>
+                                    <option value="" disabled>@lang('lang.type')</option>
+                                    <option value="1" {{old('type') == '1' ?'selected' :''}}>@lang('lang.super admin')</option>
+                                    <option value="2" {{old('type') == '2' ?'selected' :''}}>@lang('lang.sub admin')</option>
+                                    <option value="3" {{old('type') == '3' ?'selected' :''}}>@lang('lang.admin')</option>
                                 </select>
                                 <span class="text-danger">{{$errors->first('type')}}</span>
 
@@ -105,7 +105,7 @@
 
                         <div class="form-group" style="margin-left:165px">
                                 <div class="col-md-8">
-                                <textarea placeholder="@lang('lang.Description')"
+                                <textarea placeholder="@lang('lang.description')"
                                           name="description" class="form-control" rows="5" cols="8">{{old('description')}}</textarea>
                                     <span class="text-danger">{{$errors->first('description')}}</span>
 
@@ -116,8 +116,8 @@
                     <div class="form-actions">
                         <div class="row">
                             <div class="col-md-offset-3 col-md-9">
-                                <button type="submit" class="btn green">@lang('lang.Submit')</button>
-                                <button type="reset" class="btn grey-salsa btn-outline">@lang('lang.Cancel')</button>
+                                <button type="submit" class="btn green">@lang('lang.submit')</button>
+                                <button type="reset" class="btn grey-salsa btn-outline">@lang('lang.cancel')</button>
                             </div>
                         </div>
                     </div>

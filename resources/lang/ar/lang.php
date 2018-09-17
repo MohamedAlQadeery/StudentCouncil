@@ -10,6 +10,7 @@ return [
     'image' => 'صورة',
     'name' => 'الاسم',
     'user' => 'المستخدم',
+    'username'=>'اسم المستخدم',
     'users' => 'المستخدمين',
     'show users' => 'اظهر المستخدمين',
     'show' => 'اظهر',
@@ -39,6 +40,8 @@ return [
 
 
     'admin'=>'مسؤول',
+    'super admin'=>'مسؤول اعلى',
+    'sub admin'=>'مسؤول فرعي',
     'create admin'=>'انشاء مسؤول',
     'admins'=>'المسؤولين',
 
@@ -46,7 +49,7 @@ return [
     'add task'=>'اضافة مهمة',
     'south committee'=>'لجنة الجنوب',
     'south committee details'=>'وصف اللجنة',
-
+    'description'=>'وصف',
     'add description'=>'اضافة وصف',
     'slider'=>'عارض الصور',
     'upload image'=>'رفع صورة',

@@ -29,3 +29,79 @@ Route::group(['prefix'=>'department'],function(){
     Route::post('create',['as'=>'department.store','uses'=>'DepartmentController@store']);
 });
 Route::get('lang/{lang?}', ['as' => 'language.change', 'uses' => 'LanguageController@change']);
+
+
+/**
+ *
+ * user route
+ */
+Route::group(['prefix'=>'user'],function (){
+    Route::get('/',['as'=>'user.index','uses'=>'UserController@index']);
+    Route::get('edit',['as'=>'user.edit','uses'=>'UserController@edit']);
+
+});
+Route::get('lang/{lang?}', ['as' => 'language.change', 'uses' => 'LanguageController@change']);
+
+/**
+ *
+ *
+ * admins routes
+ */
+
+Route::group(['prefix' => 'admins',], function () {
+    Route::get('index', ['uses' => 'AdminsController@index', 'as' => 'admins.index']);
+    Route::get('create', ['uses' => 'AdminsController@create', 'as' => 'admins.create']);
+    Route::post('create', ['uses' => 'AdminsController@store', 'as' => 'admins.store']);
+    Route::get('destroy/{id?}', ['uses' => 'AdminsController@destroy', 'as' => 'admins.destroy']);
+    Route::get('edit/{id}', ['uses' => 'AdminsController@edit', 'as' => 'admins.edit']);
+    Route::put('edit/{id}', ['uses' => 'AdminsController@update', 'as' => 'admins.update']);
+
+});
+
+/**
+ * south routes
+ *
+ */
+Route::group(['prefix' => 'south',], function () {
+    Route::get('index', ['uses' => 'SouthernCommittee@index', 'as' => 'south.index']);
+    Route::get('create', ['uses' => 'SouthernCommittee@create', 'as' => 'south.create']);
+    Route::post('create/{id?}', ['uses' => 'SouthernCommittee@store', 'as' => 'south.store']);
+    Route::get('destroy/{id?}', ['uses' => 'SouthernCommittee@destroy', 'as' => 'south.destroy']);
+
+});
+
+/**
+ *
+ * upload routes
+ *
+ */
+Route::group(['prefix' => 'upload'], function () {
+    Route::get('create', 'uploadController@create');
+    Route::post('create', ['as' => 'slider.upload', 'uses' => 'uploadController@store']);
+    Route::get('all', ['as' => 'image.index', 'uses' => 'uploadController@index']);
+    Route::get('destroy/{id?}', ['as' => 'image.destroy', 'uses' => 'uploadController@destroy']);
+
+});
+
+
+/**
+ *
+ * colleages route
+ */
+Route::group(['prefix' => 'colleges'], function () {
+    Route::get('create', 'CollegesController@create');
+    Route::post('create', ['as' => 'colleges.add', 'uses' => 'CollegesController@store']);
+});
+
+
+/**
+ * books route
+ *
+ */
+Route::group(['prefix' => 'books'], function () {
+    Route::get('create', 'bookController@create');
+    Route::post('create', ['as' => 'book.create', 'uses' => 'bookController@store']);
+    Route::get('all', ['as' => 'book.index', 'uses' => 'bookController@index']);
+
+});
+

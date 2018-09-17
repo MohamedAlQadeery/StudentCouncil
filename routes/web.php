@@ -27,5 +27,8 @@ Route::group(['prefix'=>'department'],function(){
     Route::get('/',['as'=>'department.index','uses'=>'DepartmentController@index']);
     Route::get('create',['as'=>'department.create','uses'=>'DepartmentController@create']);
     Route::post('create',['as'=>'department.store','uses'=>'DepartmentController@store']);
+    Route::get('edit/{id}',['as'=>'department.edit','uses'=>'DepartmentController@edit']);
+    Route::post('edit/{id}',['as'=>'department.update','uses'=>'DepartmentController@update']);
+
 });
 Route::get('lang/{lang?}', ['as' => 'language.change', 'uses' => 'LanguageController@change']);

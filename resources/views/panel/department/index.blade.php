@@ -50,7 +50,7 @@
                                 <td></td>
 
                                 <td style="text-align: center">
-                                    <a href="" class="btn btn-primary">
+                                    <a href="{{route('department.edit',['id'=>$department->id])}}" class="btn btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                     <a class="btn btn-danger" href="">

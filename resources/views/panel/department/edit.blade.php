@@ -9,7 +9,7 @@
                 <div class="caption font-red-sunglo">
                     <h3> <span class="caption-subject bold uppercase"> @lang('lang.create department')</span></h3>
                 </div><br>
-                <form action="{{route('department.store')}}" method="POST">
+                <form action="{{route('department.update',['id'=>$department->id])}}" method="POST">
                     @csrf
                     @put
 
@@ -49,7 +49,7 @@
 
                     <div class="form-group">
                         <label for="name">@lang('lang.phone')</label>
-                        <input type="text" class="form-control" name="department_phone" value="{{}}">
+                        <input type="text" class="form-control" name="department_phone" value="{{$department->phone}}">
                         <span class="text-danger">{{$errors->first('department_phone')}}</span>
 
                     </div>
@@ -57,28 +57,28 @@
 
                     <div class="form-group">
                         <label for="name">@lang('lang.email')</label>
-                        <input type="text" class="form-control" name="department_email">
+                        <input type="text" class="form-control" name="department_email" value="{{$department->email}}">
                         <span class="text-danger">{{$errors->first('department_email')}}</span>
 
                     </div>
 
                     <div class="form-group">
                         <label for="name">@lang('lang.facebook')</label>
-                        <input type="text" class="form-control" name="department_facebook">
+                        <input type="text" class="form-control" name="department_facebook" {{$department->facebook}}>
                         <span class="text-danger">{{$errors->first('department_facebook')}}</span>
 
                     </div>
 
                     <div class="form-group">
                         <label for="name">@lang('lang.twitter')</label>
-                        <input type="text" class="form-control" name="department_twitter">
+                        <input type="text" class="form-control" name="department_twitter" {{$department->twitter}}>
                         <span class="text-danger">{{$errors->first('department_twitter')}}</span>
 
                     </div>
 
                     <div class="form-group">
                         <label for="name">@lang('lang.instagram')</label>
-                        <input type="text" class="form-control" name="department_instagram">
+                        <input type="text" class="form-control" name="department_instagram" value="{{$department->instagram}}">
                         <span class="text-danger">{{$errors->first('department_facebook')}}</span>
 
                     </div>
